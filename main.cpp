@@ -26,7 +26,8 @@ void init() {
 
 struct pam_response *reply;
 
-int function_conversation(int num_msg, const struct pam_message **msg, struct pam_response **resp, void *appdata_ptr) {
+int function_conversation(int num_msg, const struct pam_message **msg
+        , struct pam_response **resp, void *appdata_ptr) {
     *resp = reply;
     return PAM_SUCCESS;
 }
@@ -41,7 +42,8 @@ bool authenticate(const std::string& password) {
         return false;
     }
 
-    if (pam_start("common-auth", p, &local_conversation, &handle) != PAM_SUCCESS) {
+    if (pam_start("common-auth", p, &local_conversation, &handle) 
+            != PAM_SUCCESS) {
         return false;
     }
 
