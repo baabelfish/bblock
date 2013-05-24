@@ -12,7 +12,7 @@ void init() {
     setlocale(LC_CTYPE, "");
     initscr();
     noecho();
-    // raw();
+    raw();
     nodelay(stdscr, true);
     wtimeout(stdscr, 200);
     keypad(stdscr, true);
