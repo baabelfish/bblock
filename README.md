@@ -10,6 +10,7 @@ BbLock is ncurses-based lock for terminal inspired by i3lock.
 ## Usage
 ### Tmux
 Add following to ~/tmux.conf
+
     set-option -g lock-command /path/to/bblock
 
 ### Screen
