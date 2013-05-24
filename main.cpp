@@ -29,7 +29,6 @@ void init() {
 
 struct pam_response *reply;
 
-//function used to get user input
 int function_conversation(int num_msg, const struct pam_message **msg, struct pam_response **resp, void *appdata_ptr) {
     *resp = reply;
     return PAM_SUCCESS;
@@ -38,7 +37,7 @@ int function_conversation(int num_msg, const struct pam_message **msg, struct pa
 bool authenticate(const std::string& password) {
     int retval;
     const struct pam_conv local_conversation = { function_conversation, NULL };
-    pam_handle_t *handle = NULL; // this gets set by pam_start
+    pam_handle_t *handle = NULL;
 
     char *p = getenv("USER");
     if (p == NULL) {
@@ -59,6 +58,7 @@ bool authenticate(const std::string& password) {
         pam_end(handle, retval);
         return false;
     }
+
     pam_end(handle, retval);
     return true;
 }
@@ -73,6 +73,7 @@ void drawLine(int color, int delay = 0) {
     for (auto x = 0; x < size_x; ++x) {
         mvaddch(size_y - 1, x, ' ');
     }
+
     refresh();
     sleep(delay);
 }
