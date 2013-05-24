@@ -87,13 +87,7 @@ int main(int argc, char* argv[]) {
         drawLine(225);
         
         if (key != -1 && key != 0) {
-            std::stringstream vittu;
-            std::string ckey;
-            vittu << (char)key;
-            vittu >> ckey;
-
             drawLine(3);
-            
             if (key == 127 && pass.size() > 0) {
                 pass = pass.substr(0, pass.size() - 1);
             }
@@ -111,7 +105,7 @@ int main(int argc, char* argv[]) {
                 pass.clear();
             }
             else {
-                pass += ckey;
+                pass += (char)key;
             }
         }
     }
