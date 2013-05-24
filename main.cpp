@@ -1,12 +1,9 @@
 #include <ncurses.h>
 #include <unistd.h>
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
 #include <security/pam_appl.h>
 #include <unistd.h>
 #include <cstring>
-#include <sstream>
+#include <iostream>
 
 void init() {
     setlocale(LC_CTYPE, "");
