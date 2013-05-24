@@ -1,6 +1,6 @@
 # BbLock
 
-BbLock is ncurses-based lock for terminal inspired by i3lock.
+*BbLock* is ncurses-based lock for terminal inspired by **i3lock**.
 
 ## Installation
     git clone https://github.com/baabelfish/bblock.git
